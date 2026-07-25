@@ -1,0 +1,34 @@
+.checkoutLines .savingsLine{color:#e8b269}
+.benefitStack{display:grid;gap:10px;margin:24px 0}
+.memberBenefit,.codeBenefit{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end;border:1px solid #c9b9aa;background:#fffaf1;padding:14px}
+.memberBenefit b,.memberBenefit small{display:block}
+.memberBenefit small{color:#786a70;margin-top:4px}
+.memberBenefit button,.codeBenefit button{border:1px solid #4b002b;background:transparent;color:#4b002b;padding:12px 14px;font-weight:800;cursor:pointer}
+.memberBenefit button.applied,.codeBenefit button.applied{background:#4b002b;color:#fff}
+.codeBenefit label{display:grid;gap:6px;font-size:9px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.codeBenefit input{border:0;border-bottom:1px solid #ad9da3;background:transparent;padding:8px 0;font:inherit;text-transform:none;letter-spacing:0}
+.codeBenefit button:disabled{opacity:.4;cursor:not-allowed}
+.benefitSummary{background:#eadfd3;padding:14px;display:grid;gap:9px;font-size:12px}
+.benefitSummary span,.benefitSummary strong{display:flex;justify-content:space-between;gap:20px}
+.benefitSummary strong{border-top:1px solid #c9b9aa;padding-top:10px}
+.paymentHeading{margin-top:38px!important}
+.audienceSection{background:#f8f2e7}
+.audienceGrid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.audienceGrid article{min-height:250px;padding:34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.audienceGrid article>span{font-size:10px;color:var(--red);font-weight:800}
+.audienceGrid h3{font-family:Georgia,serif;font-size:28px;font-weight:400;margin:48px 0 12px}
+.audienceGrid p{line-height:1.55;color:#69665f}
+.audienceBand{margin-top:45px;background:var(--gold);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
+.audienceBand span,.audienceBand strong{display:block}
+.audienceBand span{font-size:9px;letter-spacing:.14em;font-weight:800}
+.audienceBand strong{font-family:Georgia,serif;font-size:25px;font-weight:400;margin-top:10px}
+.audienceBand p{line-height:1.55;margin:0}
+.websitePaths{background:var(--ink);color:var(--paper)}
+.websitePathGrid{display:grid;grid-template-columns:1fr 1fr;border:1px solid #42413d}
+.websitePathGrid article{padding:45px}.websitePathGrid article+article{border-left:1px solid #42413d}
+.websitePathGrid span{font-size:9px;letter-spacing:.14em;color:var(--gold);font-weight:800}
+.websitePathGrid h3{font-family:Georgia,serif;font-weight:400;font-size:38px;margin:25px 0 15px}
+.websitePathGrid p{color:#aaa69e;line-height:1.6;max-width:600px}
+.websitePathGrid ul{list-style:none;padding:0;margin:28px 0 0;border-top:1px solid #42413d}
+.websitePathGrid li{padding:13px 0;border-bottom:1px solid #42413d;font-size:13px}
+@media(max-width:850px){.memberBenefit,.codeBenefit,.audienceBand{grid-template-columns:1fr}.memberBenefit button,.codeBenefit button{width:100%}.audienceGrid{grid-template-columns:1fr}.websitePathGrid{grid-template-columns:1fr}.websitePathGrid article+article{border-left:0;border-top:1px solid #42413d}}
