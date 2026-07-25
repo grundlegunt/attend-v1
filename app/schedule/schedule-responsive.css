@@ -1,0 +1,142 @@
+.scheduleWorkspace { grid-template-columns: minmax(0, 1fr) 380px; }
+.timelinePanel { min-width: 0; overflow-x: auto; }
+.timeHeader,
+.roomRow { width: 1130px; }
+.timeHeader > div,
+.timeTrack { grid-template-columns: repeat(17, 1fr); }
+.showEditor { position: relative; z-index: 5; border-left: 1px solid #55444c; }
+.dragHint {
+  width: 1130px;
+  margin: -10px 0 18px;
+  color: #79696d;
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.showBlock { cursor: grab; touch-action: none; transition: filter .15s ease, opacity .15s ease, transform .15s ease; }
+.showBlock:hover { filter: brightness(1.08); }
+.showBlock:active { cursor: grabbing; }
+.showBlock.dragging { opacity: .35; transform: scale(.98); }
+.timeTrack.dropReady { background: rgba(216, 156, 76, .08); }
+.dropPreview {
+  position: absolute;
+  top: 16px;
+  height: 92px;
+  min-width: 72px;
+  z-index: 4;
+  border: 2px dashed var(--red);
+  background: rgba(239, 80, 53, .16);
+  pointer-events: none;
+}
+.dropPreview span {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  color: var(--red);
+  font-size: 8px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.fixedCleaning { display: inline-flex; align-items: center; border: 1px solid var(--line); padding: 0 13px; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.phaseLegend { width: 1130px; display: flex; flex-wrap: wrap; gap: 16px; margin: -8px 0 18px; font-size: 8px; letter-spacing: .08em; text-transform: uppercase; }
+.phaseLegend span { display: inline-flex; align-items: center; gap: 6px; }
+.phaseLegend i { width: 10px; height: 10px; }
+.arrivalKey,.phase.arrival { background: #e64a3b; }
+.trailerKey,.phase.trailers { background: #356ec9; }
+.filmKey,.phase.film { background: #2f7754; }
+.checksKey,.phase.checks { background: #e33bb5; }
+.cleaningKey,.phase.cleaning { background: #f4eee4; }
+.showBlock.phased { background: #2f7754; isolation: isolate; }
+.showBlock.phased .phase { position: absolute; top: 0; bottom: 0; z-index: 0; border-right: 1px solid rgba(255,255,255,.35); }
+.showBlock.phased .phase.checks { z-index: 1; }
+.showBlock.phased > strong,
+.showBlock.phased > .showTiming { position: relative; z-index: 2; text-shadow: 0 1px 2px rgba(0,0,0,.45); }
+.showBlock.phased > .showTiming { display: block; font-size: 8px; margin-top: 6px; white-space: nowrap; }
+.showBlock.phased .phase.cleaning { border-left: 2px solid var(--ink); border-right: 0; }
+.moveControls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.showEditor input[type="time"] {
+  width: 100%;
+  background: #2b2026;
+  border: 1px solid #695863;
+  color: #fff;
+  padding: 11px;
+  color-scheme: dark;
+}
+.timeNudges {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin-top: -4px;
+}
+.timeNudges button {
+  border: 1px solid #695863;
+  background: transparent;
+  color: var(--paper);
+  padding: 9px 6px;
+  font: inherit;
+  font-size: 9px;
+  cursor: pointer;
+}
+.timeNudges button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.filmLibrary article button {
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  padding: 7px 9px;
+  font: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+.filmLibrary article button:hover { background: var(--ink); color: var(--paper); }
+.customFilmForm {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.5fr) repeat(4, minmax(90px, .65fr)) auto;
+  gap: 10px;
+  align-items: end;
+  padding: 18px 0 22px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.customFilmForm h3 { grid-column: 1 / -1; margin: 0 0 5px; font: 400 22px Georgia, serif; }
+.customFilmForm label { display: grid; gap: 6px; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+.customFilmForm input,
+.customFilmForm select { width: 100%; min-width: 0; border: 1px solid var(--line); background: #fffaf1; color: var(--ink); padding: 10px; }
+.customFilmForm > button { border: 0; background: var(--red); color: white; padding: 11px 14px; cursor: pointer; }
+
+@media (max-width: 1280px) and (min-width: 901px) {
+  .scheduleWorkspace { grid-template-columns: 1fr; }
+  .timelinePanel { overflow-x: auto; }
+  .showEditor {
+    margin: 0 3vw 35px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+  .showEditor > span,
+  .showEditor h2,
+  .showEditor > p,
+  .editorFacts,
+  .editorChecks,
+  .showEditor > button,
+  .prototypeNote { grid-column: 1 / -1; }
+}
+
+@media (max-width: 620px) {
+  .schedulerIntro { padding-top: 38px; }
+  .schedulerIntro h1 { font-size: 48px; margin-top: 28px; }
+  .scheduleStatus { align-items: flex-start; flex-wrap: wrap; }
+  .scheduleStatus b { width: 100%; margin-left: 0; }
+  .showEditor { display: block; padding: 26px 20px; }
+  .moveControls { grid-template-columns: 1fr; }
+  .timeNudges { grid-column: 1; grid-template-columns: repeat(2, 1fr); }
+  .dateTabs { display: grid; grid-auto-flow: column; grid-auto-columns: max-content; }
+  .schedulerFooter { display: grid; gap: 10px; }
+  .customFilmForm { grid-template-columns: 1fr 1fr; }
+  .customFilmForm h3,
+  .customFilmForm label:first-of-type,
+  .customFilmForm > button { grid-column: 1 / -1; }
+}
