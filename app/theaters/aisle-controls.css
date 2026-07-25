@@ -1,0 +1,16 @@
+.rowEditorHead > div {
+  display: grid;
+  gap: 5px;
+}
+
+.rowEditorHead small {
+  color: #786a70;
+  font-size: 9px;
+}
+
+.rowSetting select {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid var(--line);
+  background: #fffaf1;
+}
